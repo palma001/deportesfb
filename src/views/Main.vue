@@ -1,27 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="toolbarMenu">
-      <ToolbarMenu
-      color="#00ACC1"
-      :items="itemsToolbar"
-      :grow="true"
-      :dense="true"
-      :classToolbar="['hidden-xs-only']"/>
-    </div>
-    <div class="siderMenu">
-      <SiderMenu
-        avatar="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/51280307_1506140412851100_6490454689660796928_n.jpg?_nc_cat=100&_nc_ht=scontent-mia3-2.xx&oh=2140cc264952c6161463838c03166a42&oe=5D8E932D"
-        title="Oriana"
-        height="100vh"
-        :classSiderMenu="['cyan darken-1']"
-        :dark="true"
-        :items="items"
-        :collapse="false"
-        :width="230"
-        :hideOverlay="true"
-        :clipped="true"
-        @changeRoute="changeRoute"/>
-    </div>
+    <ToolbarMenu/>
     <!-- Main content -->
     <div class="main-content" >
       <router-view/>

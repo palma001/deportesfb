@@ -1,122 +1,66 @@
 <template>
-  <div class="toolbar">
-    <v-toolbar
-      :color="color"
-      :active-class="activeClass"
-      :grow="grow"
-      :itemas="items"
-      :dark="dark"
-      :tabs="tabs"
-      :class="classToolbar"
-      :dense="dense"
-      :title="title">
-      <v-spacer></v-spacer>
-      <div v-for="item in items">      
-        <v-btn icon
-          @click="eventIcon(item.icon)">
-          <v-icon>{{item.icon}}</v-icon>
+  <v-toolbar
+    app
+    flat
+  >
+    <v-toolbar-side-icon
+      class="hidden-md-and-up"
+      @click="toggleDrawer"
+    />
+    <v-container
+      mx-auto
+      py-0
+    >
+      <v-layout>
+        <v-img
+          :src="require('@/assets/logo.png')"
+          class="mr-5"
+          contain
+          height="48"
+          width="48"
+          max-width="48"
+          @click="$vuetify.goTo(0)"
+        />
+        <v-btn
+          v-for="(link, i) in links"
+          :key="i"
+          :to="link.to"
+          class="ml-0 hidden-sm-and-down"
+          flat
+          @click="onClick($event, item)"
+        >
+          {{ link.text }}
         </v-btn>
-      </div>
-    </v-toolbar>
-  </div>
+        <v-spacer />
+        <v-text-field
+          append-icon="mdi-magnify"
+          flat
+          hide-details
+          solo-inverted
+          style="max-width: 300px;"
+        />
+      </v-layout>
+    </v-container>
+  </v-toolbar>
 </template>
 
 <script>
+// Utilities
+import {
+  mapGetters,
+  mapMutations
+} from 'vuex'
 export default {
-  name: 'ToolbarMenu',
-  props: {
-    /**
-     * title app
-     * @type {String}
-     */
-    title: {
-      type: String,
-      default: 'Binfrix'
-    },
-    /**
-     * dense
-     * @type {Boolean}
-     */
-    dense: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * Class toolbar
-     * @type {Array}
-     */
-    classToolbar: {
-      type: Array,
-      default: null
-    },
-    /**
-     * tabs Toolbar
-     * @param {Boolean}
-     */
-    tabs: {
-      type: Boolean,
-      default: true
-    },
-    /**
-     * Applies the dark theme variant
-     * @type {Boolean}
-     */
-    dark: {
-      type: Boolean,
-      default: true
-    },
-    /**
-     * Applies specified color to the control - it can be the name of material color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5))
-     * @type {String}
-     */
-    color: {
-      type: String,
-      default: 'purple'
-    },
-    /**
-     * The class used when item is active
-     * @type {String}
-     */
-    activeClass: {
-      type: String,
-      default: 'v-tabs__item--active'
-    },
-    /**
-     * Force v-tab's to take up all available space
-     * @type {Boolean}
-     */
-    grow: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * Items Toolbar
-     * type {Array}
-     */
-    items: {
-      type: Array,
-      default: null
-    }
-  },
-  data () {
-    return {
-      model: 'tab-2',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }
+  computed: {
+    ...mapGetters(['links'])
   },
   methods: {
-    /**
-     * Event emit the button icons
-     * @param  {String} data type icons
-     */
-    eventIcon (data) {
-      this.$emit('eventIcon', data)
+    ...mapMutations(['toggleDrawer']),
+    onClick (e, item) {
+      e.stopPropagation()
+      if (item.to || !item.href) return
+      this.$vuetify.goTo(item.href)
     }
   }
 }
 </script>
-<style>
-.toolbar {
-  width: 100%;
-}
-</style>
