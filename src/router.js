@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Post from './views/Post.vue'
+import Category from './views/Category.vue'
 
 Vue.use(Router)
 
@@ -12,6 +14,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/category/:category/:data',
+      name: 'post',
+      component: Post
+    },
+    {
+      path: '/category/:category',
+      name: 'category',
+      component: Category
     }
   ]
 })

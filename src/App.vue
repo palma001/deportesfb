@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <core-toolbar />
+    <core-toolbar 
+     @eventSearch="eventSearch"/>
 
     <core-drawer />
 
@@ -11,6 +12,9 @@
 </template>
 
 <script>
+import {
+  mapMutations
+} from 'vuex'
 
 export default {
   name: 'App',
@@ -24,6 +28,9 @@ export default {
     return {
     //
     }
+  },
+  methods: {
+    ...mapMutations(['eventSearch'])
   }
 }
 </script>

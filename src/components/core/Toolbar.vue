@@ -27,7 +27,6 @@
           :to="link.to"
           class="ml-0 hidden-sm-and-down"
           flat
-          @click="onClick($event, item)"
         >
           {{ link.text }}
         </v-btn>
@@ -38,6 +37,7 @@
           hide-details
           solo-inverted
           style="max-width: 300px;"
+          @input="search"
         />
       </v-layout>
     </v-container>
@@ -58,12 +58,8 @@ export default {
 
   methods: {
     ...mapMutations(['toggleDrawer']),
-    onClick (e, item) {
-      e.stopPropagation()
-
-      if (item.to || !item.href) return
-
-      this.$vuetify.goTo(item.href)
+    search (data) {
+      this.$emit('eventSearch', data)
     }
   }
 }

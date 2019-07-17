@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    link: link,
     articles: link,
     drawer: false,
     items: [
@@ -33,7 +34,7 @@ export default new Vuex.Store({
 
         categories.push({
           text,
-          to: `/category/${text}/`
+          to: `/category/${text.toLowerCase()}/`
         })
       }
 
@@ -45,9 +46,18 @@ export default new Vuex.Store({
   },
   mutations: {
     setDrawer: (state, payload) => (state.drawer = payload),
-    toggleDrawer: state => (state.drawer = !state.drawer)
+    toggleDrawer: state => (state.drawer = !state.drawer),
+    eventSearch: (state, data) => {
+      let link = state.link.filter(element => {
+        if (element.author && element.category && element.title && element.description) {
+          return element.category.toUpperCase().includes(data.toUpperCase()) ||
+          element.title.toUpperCase().includes(data.toUpperCase()) ||
+          element.author.toUpperCase().includes(data.toUpperCase()) ||
+          element.description.toUpperCase().includes(data.toUpperCase())
+        }
+      })
+      Vue.set(state, 'articles', link)
+    }
   },
-  actions: {
-
-  }
+  actions: {}
 })
