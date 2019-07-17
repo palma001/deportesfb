@@ -28,11 +28,11 @@
 </template>
 
 <script>
-  export default {
-    components: {
-      NewestPosts: () => import('@/components/NewestPosts'),
-      Instagram: () => import('@/components/Instagram'),
-      Tags: () => import('@/components/Tags')
-    }
+export default {
+  components: {
+    NewestPosts: () => import('@/components/NewestPosts'),
+    Instagram: () => import('@/components/Instagram'),
+    Tags: () => import('@/components/Tags')
   }
+}
 </script>

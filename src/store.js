@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { link } from './data/articles.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    articles: require('@/data/articles.json'),
+    articles: link,
     drawer: false,
     items: [
       {
@@ -13,7 +14,7 @@ export default new Vuex.Store({
         to: '/'
       },
       {
-        text: 'Futbol',
+        text: 'About',
         href: '#futbol'
       }
     ]
