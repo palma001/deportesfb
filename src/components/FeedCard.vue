@@ -5,9 +5,9 @@
   >
     <base-card
       :height="value.prominent ? 450 : 350"
+      :to="`category/${value.category}/${value.id}`"
       color="grey lighten-1"
       dark
-      href="#!"
     >
       <v-img
         :src="require(`@/assets/articles/${value.hero}`)"
