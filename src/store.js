@@ -12,11 +12,11 @@ export default new Vuex.Store({
     items: [
       {
         text: 'Home',
-        to: '/'
+        to: '/home'
       },
       {
         text: 'About',
-        href: '#futbol'
+        to: '/about'
       }
     ]
   },
