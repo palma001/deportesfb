@@ -6,6 +6,7 @@ import Category from './views/Category.vue'
 import Admin from './views/Admin.vue'
 import viewAdmin from './views/ViewAdmin.vue'
 import View from './views/View.vue'
+import TableList from './views/TableList.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
           path: '/admin',
           name: 'admin',
           component: Admin
+        },
+        {
+          path: '/table-list',
+          name: 'table-list',
+          component: TableList
         }
       ]
     }

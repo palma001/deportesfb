@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { link } from './data/articles.js'
+import { set, toggle } from './utils/vuex'
 
 Vue.use(Vuex)
 
@@ -8,6 +9,10 @@ export default new Vuex.Store({
   state: {
     link: link,
     articles: link,
+    drawerAdmin: null,
+    color: 'success',
+    image: 'https://demos.creative-tim.com/vue-material-dashboard/img/sidebar-2.32103624.jpg',
+    sidebarBackgroundColor: 'rgba(27, 27, 27, 0.74)',
     drawer: false,
     items: [
       {
@@ -57,7 +62,11 @@ export default new Vuex.Store({
         }
       })
       Vue.set(state, 'articles', link)
-    }
+    },
+    setDrawerAdmin: set('drawer'),
+    setImage: set('image'),
+    setColor: set('color'),
+    toggleDrawerAdmin: toggle('drawer')
   },
   actions: {}
 })

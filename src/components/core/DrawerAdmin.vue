@@ -19,12 +19,13 @@
         tag="v-list"
         column
       >
+      <v-list>
         <v-list-tile avatar>
           <v-list-tile-avatar
             color="white"
           >
             <v-img
-              :src="logo"
+              :src="`../../assets/img/vuetifylogo.png`"
               height="34"
               contain
             />
@@ -71,6 +72,7 @@
             Upgrade To PRO
           </v-list-tile-title>
         </v-list-tile>
+      </v-list>
       </v-layout>
     </v-img>
   </v-navigation-drawer>
@@ -84,11 +86,11 @@ import {
 } from 'vuex'
 
 export default {
+  name: 'DrawerAdmin',
   data: () => ({
-    logo: './img/vuetifylogo.png',
     links: [
       {
-        to: '/dashboard',
+        to: '/admin',
         icon: 'mdi-view-dashboard',
         text: 'Dashboard'
       },
@@ -126,20 +128,20 @@ export default {
     responsive: false
   }),
   computed: {
-    ...mapState('app', ['image', 'color']),
+    ...mapState(['image', 'color']),
     inputValue: {
       get () {
-        return this.$store.state.app.drawer
+        return this.$store.state.drawerAdmin
       },
       set (val) {
-        this.setDrawer(val)
+        this.setDrawerAdmin(val)
       }
     },
     items () {
       return this.$t('Layout.View.items')
     },
     sidebarOverlayGradiant () {
-      return `${this.$store.state.app.sidebarBackgroundColor}, ${this.$store.state.app.sidebarBackgroundColor}`
+      return `${this.$store.state.sidebarBackgroundColor}, ${this.$store.state.sidebarBackgroundColor}`
     }
   },
   mounted () {
@@ -150,7 +152,7 @@ export default {
     window.removeEventListener('resize', this.onResponsiveInverted)
   },
   methods: {
-    ...mapMutations('app', ['setDrawer', 'toggleDrawer']),
+    ...mapMutations(['setDrawerAdmin', 'toggleDrawerAdmin']),
     onResponsiveInverted () {
       if (window.innerWidth < 991) {
         this.responsive = true

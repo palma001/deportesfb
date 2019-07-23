@@ -1,23 +1,24 @@
 <template>
-  <v-content>
+  <v-app>
+    <core-filter />
     <core-drawer />
     <div id="core-view">
       <v-fade-transition mode="out-in">
         <router-view />
       </v-fade-transition>
     </div>
-  </v-content>
+  </v-app>
 </template>
 
 <script>
 export default {
   name: 'App',
   components: {
-    CoreDrawer: () => import('@/components/core/DrawerAdmin')
+    CoreDrawer: () => import('@/components/core/DrawerAdmin'),
+    CoreFilter: () => import('@/components/core/FilterAdmin')
   }
 }
 </script>
-
 <style lang="scss">
 @import '@/styles/index.scss';
 
