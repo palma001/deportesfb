@@ -16,66 +16,10 @@
           title="Simple Table"
           text="Here is a subtitle for this table"
         >
-          <v-data-table
+          <DataTabulated
             :headers="headers"
-            :items="items"
-            hide-actions
-          >
-            <template
-              slot="headerCell"
-              slot-scope="{ header }"
-            >
-              <span
-                class="subheading font-weight-light text-success text--darken-3"
-                v-text="header.text"
-              />
-            </template>
-            <template
-              slot="items"
-              slot-scope="{ item }"
-            >
-              <td>{{ item.name }}</td>
-              <td>{{ item.country }}</td>
-              <td>{{ item.city }}</td>
-              <td class="text-xs-right">{{ item.salary }}</td>
-            </template>
-          </v-data-table>
-        </v-card>
-      </v-flex>
-      <v-flex
-        md12
-      >
-        <v-card
-          color="green"
-          flat
-          full-width
-          title="Table on Plain Background"
-          text="Here is a subtitle for this table"
-        >
-          <v-data-table
-            :headers="headers"
-            :items="items.slice(0, 7)"
-            hide-actions
-          >
-            <template
-              slot="headerCell"
-              slot-scope="{ header }"
-            >
-              <span
-                class="subheading font-weight-light text--darken-3"
-                v-text="header.text"
-              />
-            </template>
-            <template
-              slot="items"
-              slot-scope="{ item }"
-            >
-              <td>{{ item.name }}</td>
-              <td>{{ item.country }}</td>
-              <td>{{ item.city }}</td>
-              <td class="text-xs-right">{{ item.salary }}</td>
-            </template>
-          </v-data-table>
+            :items="items">
+          </DataTabulated>
         </v-card>
       </v-flex>
     </v-layout>
@@ -83,11 +27,15 @@
 </template>
 
 <script>
+import DataTabulated from '../components/TableList'
 export default {
+  components: {
+    DataTabulated: DataTabulated
+  },
   data: () => ({
     headers: [
       {
-        sortable: false,
+        sortable: true,
         text: 'Name',
         value: 'name'
       },
