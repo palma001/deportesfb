@@ -1,7 +1,7 @@
 <template>
   <v-toolbar
     app
-    flat
+    dark
   >
     <v-toolbar-side-icon
       class="hidden-md-and-up"

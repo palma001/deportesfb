@@ -8,9 +8,9 @@
       wrap>
       <v-flex
         md12>
-        <v-card
-          title="Simple Table"
-          text="Here is a subtitle for this table">
+        <material-card
+          :title="title"
+          :text="subtitle">
           <v-data-table
             :headers="headers"
             :items="items"
@@ -20,7 +20,6 @@
               slot-scope="{ header }">
               <span
                 class="subheading font-weight-light text-success text--darken-3"
-                v-if="header.sortable"
                 v-text="header.text"
               />
             </template>
@@ -33,7 +32,7 @@
               <td>{{ item.salary }}</td>
             </template>
           </v-data-table>
-        </v-card>
+        </material-card>
       </v-flex>
     </v-layout>
   </v-container>
@@ -43,7 +42,7 @@
 export default {
   name: 'DataTabulated',
   props: {
-    headers: {
+    config: {
       type: Array,
       require: true
     },
@@ -54,11 +53,30 @@ export default {
     hideActions: {
       type: Boolean,
       default: false
+    },
+    title: {
+      type: String,
+      require: false
+    },
+    subtitle: {
+      type: String,
+      require: false
     }
   },
-  computed: {
-    item () {
-      return this.items
+  data () {
+    return {
+      headers: []
+    }
+  },
+  created () {
+    this.headersTable()
+  },
+  methods: {
+    headersTable () {
+      this.config.map(element => {
+        this.headers.push(element.tabulated)
+      })
+      console.log(this.headers)
     }
   }
 }

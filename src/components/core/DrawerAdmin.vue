@@ -25,7 +25,7 @@
             color="white"
           >
             <v-img
-              :src="`../../assets/img/vuetifylogo.png`"
+              src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
               height="34"
               contain
             />

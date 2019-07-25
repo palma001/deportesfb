@@ -7,6 +7,7 @@ import Admin from './views/Admin.vue'
 import viewAdmin from './views/ViewAdmin.vue'
 import View from './views/View.vue'
 import TableList from './views/TableList.vue'
+import formDynamic from './views/formDynamic.vue'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
           path: '/table-list',
           name: 'table-list',
           component: TableList
+        },
+        {
+          path: '/user-profile',
+          name: 'form-dynamic',
+          component: formDynamic
         }
       ]
     }

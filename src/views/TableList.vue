@@ -1,61 +1,22 @@
 <template>
-  <v-container
-    fill-height
-    fluid
-    grid-list-xl
-  >
-    <v-layout
-      justify-center
-      wrap
-    >
-      <v-flex
-        md12
-      >
-        <v-card
-          color="green"
-          title="Simple Table"
-          text="Here is a subtitle for this table"
-        >
-          <DataTabulated
-            :headers="headers"
-            :items="items">
-          </DataTabulated>
-        </v-card>
-      </v-flex>
-    </v-layout>
+  <v-container>
+  <DataTabulated
+    :config="headers"
+    :items="items"
+    title="Tabla de usuarios">
+  </DataTabulated>
   </v-container>
 </template>
 
 <script>
 import DataTabulated from '../components/TableList'
+import { userConfig } from '../config/userConfig'
 export default {
   components: {
     DataTabulated: DataTabulated
   },
   data: () => ({
-    headers: [
-      {
-        sortable: true,
-        text: 'Name',
-        value: 'name'
-      },
-      {
-        sortable: false,
-        text: 'Country',
-        value: 'country'
-      },
-      {
-        sortable: false,
-        text: 'City',
-        value: 'city'
-      },
-      {
-        sortable: false,
-        text: 'Salary',
-        value: 'salary',
-        align: 'right'
-      }
-    ],
+    headers: userConfig,
     items: [
       {
         name: 'Dakota Rice',

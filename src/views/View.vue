@@ -3,7 +3,7 @@
     <core-toolbar 
      @eventSearch="eventSearch"/>
     <core-drawer />
-    <v-content id="home">
+    <v-content>
       <router-view />
     </v-content>
     <core-footer />
