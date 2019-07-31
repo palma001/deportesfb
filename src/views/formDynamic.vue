@@ -1,8 +1,8 @@
 <template>
-	<v-container>
+  <v-container>
    <form-dynamic
     :config="config"
-    :button="buttonFormAdd"/>  
+    :button="buttonFormAdd"/>
   </v-container>
 </template>
 <script>

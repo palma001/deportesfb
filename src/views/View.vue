@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <core-toolbar 
-     @eventSearch="eventSearch"/>
+    <core-toolbar
+     @eventSearch="eventSearch" />
     <core-drawer />
     <v-content>
       <router-view />

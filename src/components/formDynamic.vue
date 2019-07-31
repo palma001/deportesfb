@@ -10,16 +10,24 @@ export default {
       require: true
     }
   },
+  data () {
+    return {
+      objectToBind: {}
+    }
+  },
   methods: {
     createInput (createElement, config) {
+      let self = this
       let input = []
       config.map(element => {
         let propTag = element['addible']['propTag']
         if (element['addible']['addible']) {
+          element['addible']['component']['props']['value'] = self.objectToBind[propTag]
           input.push(createElement(element['addible']['component']['name'], {
             props: {
               ...element['addible']['component']['props'],
-              label: element['addible']['label']
+              error: (self.errors.has(propTag)) ? (self.errors.has(propTag)) : false,
+              'error-messages': (self.errors.first(propTag)) ? [(self.errors.first(propTag))] : ''
             },
             class: {
               ...element['addible']['component']['class']
@@ -27,14 +35,35 @@ export default {
             attrs: {
               name: propTag,
               ...element['addible']['component']['attrs']
-            }
+            },
+            on: {
+              input: function (value) {
+                self.objectToBind[propTag] = value
+              },
+              select: function (value) {
+                self.objectToBind[propTag] = value
+              }
+            },
+            directives: (function () {
+              if (element['addible']['component']['directives']) {
+                let directives = [
+                  ...element['addible']['component']['directives']
+                ]
+                return directives
+              }
+            })()
           }))
         }
       })
       return input
     },
     saveData () {
-      console.log('guardar')
+      this.validateBeforeSubmit().then(res => {
+        if (res) {
+          console.log(this.objectToBind)
+          this.$emit('save', this.objectToBind)
+        }
+      })
     },
     cancelAdd () {
       this.$router.go(-1)
@@ -70,7 +99,20 @@ export default {
           }
         }, [(element['name'])])
       })
-    }
+    },
+    /**
+     * Verify formulary error
+     * @param {String} event form to change
+     */
+    validateBeforeSubmit () {
+      return this.$validator.validateAll()
+        .then((result) => {
+          return result
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
   },
   render: function (createElement) {
     let self = this

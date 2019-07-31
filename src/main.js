@@ -8,6 +8,9 @@ import 'vuetify/dist/vuetify.min.css'
 import Vuetify from 'vuetify'
 import theme from './plugins/theme'
 import './components'
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
 Vue.config.productionTip = false
 Vue.use(Vuetify, {
   iconfont: 'mdi',

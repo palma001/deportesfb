@@ -2,12 +2,20 @@ export const userConfig = [
   {
     addible: {
       propTag: 'name',
-      label: 'Nombre',
       addible: true,
       component: {
         name: 'v-text-field',
         props: {
+          label: 'Nombre'
         },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
         class: {
           'purple-input': true
         }
@@ -22,13 +30,23 @@ export const userConfig = [
   {
     addible: {
       propTag: 'country',
-      label: 'Pais',
       addible: true,
       component: {
         name: 'v-Autocomplete',
         props: {
-          items: ['Venezuela', 'Colombia']
+          label: 'Pais',
+          items: ['Venezuela', 'Colombia'],
+          'return-object': true
+
         },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
         class: {
           'purple-input': true
         }
@@ -44,11 +62,19 @@ export const userConfig = [
     addible: {
       addible: true,
       propTag: 'city',
-      label: 'Ciudad',
       component: {
         name: 'v-text-field',
         props: {
+          label: 'Ciudad'
         },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
         class: {
           'purple-input': true
         }
@@ -63,12 +89,20 @@ export const userConfig = [
   {
     addible: {
       propTag: 'salary',
-      label: 'Salario',
       addible: true,
       component: {
         name: 'v-text-field',
         props: {
+          label: 'Salario'
         },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
         class: {
           'purple-input': true
         }
