@@ -1,15 +1,17 @@
 <template>
 	<v-container>
    <form-dynamic
-    :config="config"/>  
+    :config="config"
+    :button="buttonFormAdd"/>  
   </v-container>
 </template>
 <script>
-import { userConfig } from '../config/userConfig'
+import { userConfig, buttonFormAdd } from '../config/userConfig'
 export default {
   data () {
     return {
-      config: userConfig
+      config: userConfig,
+      buttonFormAdd: buttonFormAdd
     }
   }
 }

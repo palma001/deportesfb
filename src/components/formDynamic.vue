@@ -4,6 +4,10 @@ export default {
     config: {
       type: Array,
       require: true
+    },
+    button: {
+      type: Array,
+      require: true
     }
   },
   methods: {
@@ -15,7 +19,7 @@ export default {
           input.push(createElement(element['addible']['component']['name'], {
             props: {
               ...element['addible']['component']['props'],
-              label: propTag
+              label: element['addible']['label']
             },
             class: {
               ...element['addible']['component']['class']
@@ -28,6 +32,44 @@ export default {
         }
       })
       return input
+    },
+    saveData () {
+      console.log('guardar')
+    },
+    cancelAdd () {
+      this.$router.go(-1)
+    },
+    restore () {
+      console.log(this)
+    },
+    createButtons (createElement, self, buttons) {
+      return buttons.map(element => {
+        return createElement('v-btn', {
+          props: {
+            ...element['props']
+          },
+          class: {
+            ...element['class']
+          },
+          on: {
+            click: function () {
+              console.log()
+              switch (element['action'].toLowerCase()) {
+                case 'add':
+                  self.saveData()
+                  break
+                case 'cancel':
+                  self.cancelAdd()
+                  break
+                case 'restore':
+                  self.restore()
+                  break
+                default:
+              }
+            }
+          }
+        }, [(element['name'])])
+      })
     }
   },
   render: function (createElement) {
@@ -46,6 +88,12 @@ export default {
           'wrap': true
         }
       },
+      [createElement('v-flex', {
+        props: {
+          xs12: true,
+          md8: true
+        }
+      },
       [
         createElement('material-card', {
           props: {
@@ -55,9 +103,37 @@ export default {
           }
         },
         [
-          createElement('v-form', [self.createInput(createElement, self.config)])
+          createElement('v-form',
+            [
+              createElement('v-container', {
+                props: {
+                  'py-0': true
+                }
+              },
+              [
+                createElement('v-layout', {
+                  props: {
+                    wrap: true
+                  }
+                },
+                [
+                  createElement('v-flex', {
+                    props: {
+                      'xs12': true,
+                      'md4': true
+                    }
+                  },
+                  [self.createInput(createElement, self.config)])
+                ])
+              ])
+            ]),
+          createElement('v-card-actions',
+            [
+              self.createButtons(createElement, self, self.button)
+            ]
+          )
         ])
-      ])
+      ])])
     ])
   }
 }
