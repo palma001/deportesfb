@@ -57,10 +57,12 @@ export default {
       })
       return input
     },
+    /**
+     * Event save
+     */
     saveData () {
       this.validateBeforeSubmit().then(res => {
         if (res) {
-          console.log(this.objectToBind)
           this.$emit('save', this.objectToBind)
         }
       })
@@ -71,6 +73,13 @@ export default {
     restore () {
       console.log(this)
     },
+    /**
+     * Create input of the formulary
+     * @param  {[type]} createElement [description]
+     * @param  {[type]} self          [description]
+     * @param  {Array} buttons       buttons of formulary
+     * @return {Array}               buttons of formulary
+     */
     createButtons (createElement, self, buttons) {
       return buttons.map(element => {
         return createElement('v-btn', {
@@ -82,7 +91,6 @@ export default {
           },
           on: {
             click: function () {
-              console.log()
               switch (element['action'].toLowerCase()) {
                 case 'add':
                   self.saveData()
@@ -112,7 +120,7 @@ export default {
         .catch((err) => {
           console.log(err)
         })
-    },
+    }
   },
   render: function (createElement) {
     let self = this
