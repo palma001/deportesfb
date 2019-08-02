@@ -6,11 +6,11 @@
   </v-container>
 </template>
 <script>
-import { userConfig, buttonFormAdd } from '../config/userConfig'
+import { blogConfig, buttonFormAdd } from '../config/blogConfig'
 export default {
   data () {
     return {
-      config: userConfig,
+      config: blogConfig,
       buttonFormAdd: buttonFormAdd
     }
   }

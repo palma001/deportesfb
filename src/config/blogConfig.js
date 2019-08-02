@@ -1,7 +1,7 @@
-export const userConfig = [
+export const blogConfig = [
   {
     addible: {
-      propTag: 'name',
+      propTag: 'blog_id',
       addible: true,
       component: {
         name: 'v-text-field',
@@ -23,13 +23,41 @@ export const userConfig = [
     },
     tabulated: {
       sortable: true,
-      text: 'Name',
-      value: 'name'
+      text: '#',
+      value: 'blog_id'
     }
   },
   {
     addible: {
-      propTag: 'country',
+      propTag: 'title',
+      addible: true,
+      component: {
+        name: 'v-text-field',
+        props: {
+          label: 'Salario'
+        },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
+        class: {
+          'purple-input': true
+        }
+      }
+    },
+    tabulated: {
+      sortable: false,
+      text: 'Titulo',
+      value: 'title'
+    }
+  },
+  {
+    addible: {
+      propTag: 'category_id',
       addible: true,
       component: {
         name: 'v-Autocomplete',
@@ -54,14 +82,14 @@ export const userConfig = [
     },
     tabulated: {
       sortable: false,
-      text: 'Country',
-      value: 'country'
+      text: 'Categoria',
+      value: 'category_id'
     }
   },
   {
     addible: {
       addible: true,
-      propTag: 'city',
+      propTag: 'description',
       component: {
         name: 'v-text-field',
         props: {
@@ -82,18 +110,18 @@ export const userConfig = [
     },
     tabulated: {
       sortable: false,
-      text: 'City',
-      value: 'city'
+      text: 'Descripcion',
+      value: 'description'
     }
   },
   {
     addible: {
-      propTag: 'salary',
       addible: true,
+      propTag: 'image',
       component: {
         name: 'v-text-field',
         props: {
-          label: 'Salario'
+          label: 'Ciudad'
         },
         directives: [
           {
@@ -110,8 +138,64 @@ export const userConfig = [
     },
     tabulated: {
       sortable: false,
-      text: 'Salary',
-      value: 'salary'
+      text: 'image',
+      value: 'image'
+    }
+  },
+  {
+    addible: {
+      addible: true,
+      propTag: 'created_at',
+      component: {
+        name: 'v-text-field',
+        props: {
+          label: 'Ciudad'
+        },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
+        class: {
+          'purple-input': true
+        }
+      }
+    },
+    tabulated: {
+      sortable: false,
+      text: 'Fecha de creación',
+      value: 'created_at'
+    }
+  },
+  {
+    addible: {
+      addible: true,
+      propTag: 'updated_at',
+      component: {
+        name: 'v-text-field',
+        props: {
+          label: 'Ciudad'
+        },
+        directives: [
+          {
+            name: 'validate',
+            value: {
+              required: true
+            }
+          }
+        ],
+        class: {
+          'purple-input': true
+        }
+      }
+    },
+    tabulated: {
+      sortable: false,
+      text: 'Fecha de modificación',
+      value: 'updated_at'
     }
   }
 ]

@@ -10,47 +10,32 @@
 
 <script>
 import DataTabulated from '../components/TableList'
-import { userConfig } from '../config/userConfig'
+import { blogConfig } from '../config/blogConfig'
 export default {
   components: {
     DataTabulated: DataTabulated
   },
   data: () => ({
-    headers: userConfig,
-    items: [
-      {
-        name: 'Dakota Rice',
-        country: 'Niger',
-        city: 'Oud-Tunrhout',
-        salary: '$35,738'
-      },
-      {
-        name: 'Minerva Hooper',
-        country: 'Curaçao',
-        city: 'Sinaai-Waas',
-        salary: '$23,738'
-      }, {
-        name: 'Sage Rodriguez',
-        country: 'Netherlands',
-        city: 'Overland Park',
-        salary: '$56,142'
-      }, {
-        name: 'Philip Chanley',
-        country: 'Korea, South',
-        city: 'Gloucester',
-        salary: '$38,735'
-      }, {
-        name: 'Doris Greene',
-        country: 'Malawi',
-        city: 'Feldkirchen in Kārnten',
-        salary: '$63,542'
-      }, {
-        name: 'Mason Porter',
-        country: 'Chile',
-        city: 'Gloucester',
-        salary: '$78,615'
-      }
-    ]
-  })
+    headers: blogConfig,
+    items: [],
+    params: {
+      paginate: true,
+      sortField: 'title',
+      sortOrder: 'asc',
+      perPage: 0
+    }
+  }),
+  created () {
+    this.getList()
+  },
+  methods: {
+    getList () {
+      this.$services.getData(['deportes', 'blogs'], this.params).then(response => {
+        this.items = response.res.data.data
+        console.log(response.res.data.data)
+      })
+    }
+  }
+
 }
 </script>
