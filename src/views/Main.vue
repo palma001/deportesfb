@@ -30,11 +30,6 @@ export default {
         { icon: 'more_vert' }
       ]
     }
-  },
-  methods: {
-    changeRoute (data) {
-      this.$router.push({ name: data })
-    }
   }
 }
 </script>

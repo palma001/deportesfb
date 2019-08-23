@@ -5,7 +5,7 @@
   >
     <base-card
       :height="value.prominent ? 450 : 350"
-      :to="`category/${value.category.toLowerCase()}/${value.id}`"
+      :to="`/${value.category.toLowerCase()}`"
       color="grey lighten-1"
       dark
     >

@@ -8,6 +8,7 @@ import viewAdmin from './views/ViewAdmin.vue'
 import View from './views/View.vue'
 import TableList from './views/TableList.vue'
 import formDynamic from './views/formDynamic.vue'
+import Brave from './views/Brave.vue'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
           path: '/category/:category',
           name: 'category',
           component: Category
+        },
+        {
+          path: '/brave/',
+          name: 'brave',
+          component: Brave
         }
       ]
     },

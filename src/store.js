@@ -18,10 +18,6 @@ export default new Vuex.Store({
       {
         text: 'Home',
         to: '/home'
-      },
-      {
-        text: 'About',
-        to: '/about'
       }
     ]
   },
@@ -39,7 +35,7 @@ export default new Vuex.Store({
 
         categories.push({
           text,
-          to: `/category/${text.toLowerCase()}/`
+          to: `/${text.toLowerCase()}/`
         })
       }
 
