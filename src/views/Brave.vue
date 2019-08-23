@@ -55,6 +55,7 @@
         Hacer click Add Channel y elije el canal quieres asociar
       </h4>
       <img src="../assets/brave/addChanel.png" height="889" width="100%" alt="">
+      <a href="https://publipaid.com/r5OSE8"><img src="https://cdn.publipaid.com/static/banners/es/publipaid-g-468x60.gif"></a>
     </div>
   </div>
 </template>
