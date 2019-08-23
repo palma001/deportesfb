@@ -10,6 +10,7 @@
 
     <social />
   </div>
+  <iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=728x15" scrolling="no" style="width:728px; height:15px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
 </template>
 
 <script>
