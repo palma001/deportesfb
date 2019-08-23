@@ -4,7 +4,7 @@
       <center>
         <iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
       </center>
-    	 <h2>Gana desde 5$ dólares o más GRATIS con Brave (tiempo limitado)</h2>
+       <h2>Gana desde 5$ dólares o más GRATIS con Brave (tiempo limitado)</h2>
        <p class="autor">
           Autores: <span>Luis Palma y Jesus Cannia</span>, Fecha de creación: <span>23/08/2019</span>
         </p>
@@ -81,14 +81,13 @@
   }
 
   @media only screen and (max-width: 600px) {
-  .parrafo {
-    width: 80%;
-    margin: 20px auto auto auto;
+    .parrafo {
+      width: 80%;
+      margin: 20px auto auto auto;
+    }
+    .head {
+      width: 80%;
+      margin: auto;
+    }
   }
-  .head {
-    width: 80%;
-    margin: auto;
-  }
-}
-
 </style>
