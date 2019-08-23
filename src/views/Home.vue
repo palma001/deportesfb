@@ -1,6 +1,8 @@
 <template>
   <div id="home">
-    <iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+    <center>
+      <iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
+    </center>
     <articles>
       <banner />
     </articles>
