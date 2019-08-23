@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
     <div class="head">
     	 <h2>Gana desde 5$ dólares o más GRATIS con Brave (tiempo limitado)</h2>
        <p class="autor">
