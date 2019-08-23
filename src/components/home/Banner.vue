@@ -4,7 +4,7 @@
       class="grey lighten-2"
       height="400"
       width="100%"
-      :src="require('@/assets/articles/blurcamera.jpg')"
+      :src="require('@/assets/articles/Fotolia_70275441_Subscription_Monthly_M-1080x675.jpg')"
     >
       <v-layout
         fill-height
@@ -14,21 +14,23 @@
         <v-flex
           xs12
           md7
-          offset-md5
+          offset-md7
+          offset-sm7
+          offset-xs7
         >
-          <h1 class="display-3 font-weight-light">
-            The Art Of Travel
+          <h1 class="display-2 font-weight-light">
+            Monetiza tu tiempo
           </h1>
           <div class="subheading text-uppercase pl-2 mb-4">
-            Finding Beauty, One flight at a time
+            Aqui te enseñamos como ganar dinero desde casa
           </div>
-          <v-btn
-            color="primary"
+<!--           <v-btn
+            color="success"
             depressed
             round
           >
             Subscribe
-          </v-btn>
+          </v-btn> -->
         </v-flex>
       </v-layout>
     </v-img>

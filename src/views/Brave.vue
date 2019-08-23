@@ -59,7 +59,7 @@
 </script>
 <style>
   .head {
-    width: 50%;
+    width: 80%;
     margin: auto;
   }
   .autor {
@@ -69,11 +69,23 @@
     font-weight: bold;
   }
   .parrafo {
-    width: 50%;
+    width: 80%;
     margin: 20px auto auto auto;
   }
   .parrafo h4 {
     font-size: 50px;
     margin-top: 10px;
   }
+
+  @media only screen and (min-width: 400px) {
+  .parrafo {
+    width: 60%;
+    margin: 20px auto auto auto;
+  }
+  .head {
+    width: 60%;
+    margin: auto;
+  }
+}
+
 </style>
