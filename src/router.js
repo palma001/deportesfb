@@ -9,6 +9,7 @@ import View from './views/View.vue'
 import TableList from './views/TableList.vue'
 import formDynamic from './views/formDynamic.vue'
 import Brave from './views/Brave.vue'
+import PubliPaid from './views/PubliPaid.vue'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
           path: '/brave/',
           name: 'brave',
           component: Brave
+        },
+        {
+          path: '/publiPaid/',
+          name: 'publiPaid',
+          component: PubliPaid
         }
       ]
     },
