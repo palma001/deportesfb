@@ -18,7 +18,7 @@
           offset-sm7
           offset-xs7
         >
-          <h1 class="display-2 font-weight-light">
+          <h1 class="display-2 font-weight-light text-uppercase">
             Monetiza tu Tiempo
           </h1>
           <div class="subheading text-uppercase pl-2 mb-4">
