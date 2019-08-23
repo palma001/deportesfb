@@ -29,7 +29,7 @@
         A partir de aquí, tienen que usar el navegador que acaban de descargar para los siguientes pasos
       </h4>
       <h4>
-        Una vez descargado e instalado, van a la página (<a href="https://publishers.basicattentiontoken.org/"> https://publishers.basicattentiontoken.org</a>) y abren el menú que se encuentra arriba a la derecha, luego le dan click a donde dice publishers
+        Una vez descargado e instalado, van a la página (<a href="https://publishers.basicattentiontoken.org/"> https://publishers.basicattentiontoken.org</a>)
       </h4>
       <img src="../assets/brave/login.png" height="741" width="100%" alt="">
       <h4>Aquí empieza un proceso de registro:</h4>
