@@ -21,6 +21,16 @@
 				una vez aprobada, puedes ver tus anuncios y pasar el link
 				de referido, y ganar dinero de esa forma.
 			</h4>
+			<h3>
+				¿Como puedes ganar dinero en PubliPaid?
+			</h3>
+			<h4>Ahora en Publipaid puedes ganar dinero de 2 formas: 
+				Primero.- Viendo Publicidad, es simple, solo debes visualizar por cierto tiempo un anuncio 
+				y un importe monetario se acredita en tu saldo disponible de publipaid. 
+				También puedes ganar comisiones por cada amigo que invites a unirse a tu red de publipaid. 
+				Segundo: Alquilando referidos, es la manera más rentable de generar ingresos, los referidos 
+				trabajan para usted, sus ganancias los puede retirar en cualquier momento.
+				</h4>
 			<h4>Saludos a todos y buena suerte</h4>
 			<h4>
 				Si quieres ser emprendedor, tienes que aprender aprovechar
