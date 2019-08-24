@@ -24,7 +24,7 @@
 			<h4>Saludos a todos y buena suerte</h4>
 			<h4>
 				Si quieres ser emprendedor, tienes que aprender aprovechar
-				tu tiempo el dinero.
+				tu tiempo.
 			</h4>
 			<center>
 				<a href="https://publipaid.com/r5OSE8"><img src="https://cdn.publipaid.com/static/banners/es/publipaid-g-336x280.gif"></a>
