@@ -1,9 +1,7 @@
 <template>
 	<div class="container">
 		<div class="head">
-			<center>
-				<iframe data-aa="1231421" src="//ad.a-ads.com/1231421?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
-			</center>
+			
 			<h2>Gana dinero por ver anuncios</h2>
 			<p class="autor">
 				Autores: <span>Luis Palma y Jesus Cannia</span>, Fecha de creación: <span>23/08/2019</span>
@@ -11,7 +9,6 @@
 			<hr/>
 		</div>
 		<div class="parrafo">
-			<iframe width="100%" height="315" src="https://www.youtube.com/embed/OZxcJxejib0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<h4>
 				Registrate <a href="https://publipaid.com/r5OSE8">Aqui</a>
 				y mira los videos para que aprenadas a monetizar tu tiempo
@@ -37,9 +34,6 @@
 				Si quieres ser emprendedor, tienes que aprender aprovechar
 				tu tiempo.
 			</h4>
-			<center>
-				<a href="https://publipaid.com/r5OSE8"><img src="https://cdn.publipaid.com/static/banners/es/publipaid-g-336x280.gif"></a>
-			</center>
 		</div>
 	</div>
 </template>
